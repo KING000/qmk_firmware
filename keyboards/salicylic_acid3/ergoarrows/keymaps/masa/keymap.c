@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // entirely and just use numbers.
 
 #define OVR_TGL KEY_OVERRIDE_TOGGLE
-
+ 
 const key_override_t at_key_override   = ko_make_basic(MOD_MASK_SHIFT, KC_2,    JP_AT);
 const key_override_t circ_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_6,    JP_CIRC);
 const key_override_t ampr_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_7,    JP_AMPR);
