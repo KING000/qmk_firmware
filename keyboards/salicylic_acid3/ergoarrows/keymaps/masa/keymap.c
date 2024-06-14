@@ -44,7 +44,7 @@ const key_override_t quot_key_override = ko_make_with_layers_and_negmods(0, KC_Q
 const key_override_t dquo_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, JP_DQUO);
 const key_override_t coln_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, JP_COLN);
 
-const key_override_t grv_key_override  = ko_make_with_layers_and_negmods(0, KC_CAPS, JP_GRV, ~0, (uint8_t) MOD_MASK_SHIFT);
+//const key_override_t grv_key_override  = ko_make_with_layers_and_negmods(0, KC_CAPS, JP_GRV, ~0, (uint8_t) MOD_MASK_SHIFT);
 const key_override_t tild_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_CAPS, JP_TILD);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
@@ -69,7 +69,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &quot_key_override,
 	&coln_key_override,
 
-	&grv_key_override,
+	//&grv_key_override,
 	&tild_key_override,
     NULL
 };
@@ -78,15 +78,15 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
   //,--------------------------------------------------------------|   |--------------------------------------------------------------.
-       KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,        KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+       KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,        KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_MINS,
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,        KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
+       KC_GRV,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,        KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_EQL,
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
-      KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,        KC_G,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_ENT,
+      KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G, KC_LBRC,     KC_RBRC,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_BSLS,
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,        KC_B,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, KC_LNG2,     KC_INT2,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_QUOT,
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
-     KC_LCTL,  KC_LGUI,   KC_UP, KC_LALT,  KC_SPC, KC_BSPC,  KC_DEL,     KC_BSPC,  KC_DEL,  KC_SPC, KC_RALT,   KC_UP,  KC_APP, MO(1),
+        MO(1), KC_LALT,   KC_UP, KC_LGUI,  KC_LSFT, KC_SPC,  KC_TAB,     KC_ENT,  KC_BSPC,  KC_DEL, LCTL(KC_LGUI),  KC_UP, LALT(KC_LCTL), MO(1),
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
                KC_LEFT, KC_DOWN, KC_RGHT,                                                           KC_LEFT, KC_DOWN, KC_RGHT    
   //|--------------------------------------------------------------|   |--------------------------------------------------------------'
@@ -102,9 +102,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
       _______, RGB_TOG, RGB_MOD, _______, RGB_SAD, RGB_SAI, _______,     _______, _______, _______,  KC_END, KC_PGDN, _______, _______,
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
-      _______, RGB_VAD, KC_VOLU, RGB_VAI, RGB_HUD, RGB_HUI, _______,     _______, _______, _______, _______, _______, _______, _______,
+      _______, RGB_VAD, KC_VOLU, RGB_VAI, RGB_HUD, RGB_HUI, _______,     _______, _______, _______, _______, KC_PGUP, _______, _______,
   //|--------+--------+--------+--------+--------+-----------------|   |--------+--------+--------+--------+--------+--------+--------|
-               KC_MPRV, KC_VOLD, KC_MNXT,                                                           _______, _______, _______    
+               KC_MPRV, KC_VOLD, KC_MNXT,                                                           KC_HOME, KC_PGDN, KC_END    
   //|--------------------------------------------------------------|   |--------------------------------------------------------------'
   ),
 
